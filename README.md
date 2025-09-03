@@ -4,21 +4,24 @@
   Desafio Super Trunfo — Movimentação (Nível Novato)
   ---------------------------------------------------
   Movimentos:
-    - Bispo:  P_Bispo casas na diagonal superior direita (Cima + Direita)
-    - Torre:  P_Torre casas para a Direita
+    - Bispo : P_Bispo  casas na diagonal superior direita (Cima + Direita)
+    - Torre : P_Torre  casas para a Direita
     - Rainha: P_Rainha casas para a Esquerda
+    - Cavalo: P_Cavalo movimentos no formato (Baixo + Baixo + Esquerda)
 
   Estruturas usadas:
     - Bispo  -> for
     - Torre  -> while
     - Rainha -> do...while
+    - Cavalo -> for
 */
 
 int main(void) {
-    // Constantes (quantidade de casas que cada peça vai andar)
+    // Constantes (quantidade de casas/movimentos de cada peça)
     int P_Bispo  = 5;  // diagonal superior direita
     int P_Torre  = 5;  // direita
     int P_Rainha = 8;  // esquerda
+    int P_Cavalo = 1;  // movimentos especiais (Baixo + Baixo + Esquerda)
 
     printf("=== Super Trunfo - Movimentacao (Nivel Novato) ===\n\n");
 
@@ -60,13 +63,27 @@ int main(void) {
     printf("(Total de casas executadas: %d)\n\n", contador_rainha);
 
     /* ================================
-       4) Resumo final
+       4) CAVALO — usando for
+       Movimento: Baixo + Baixo + Esquerda
+    ================================= */
+    printf("[Cavalo] %d movimentos (Baixo + Baixo + Esquerda)\n", P_Cavalo);
+    for (int i = 1; i <= P_Cavalo; i++) {
+        printf("Baixo\n");
+        printf("Baixo\n");
+        printf("Esquerda\n");
+    }
+    printf("(Total de movimentos executados: %d)\n\n", P_Cavalo);
+
+    /* ================================
+       5) Resumo final
     ================================= */
     printf("=== Resumo de Execucao ===\n");
     printf("Bispo : %d casas diagonais (cada uma = Cima + Direita)\n", P_Bispo);
     printf("Torre : %d casas para a Direita\n", P_Torre);
     printf("Rainha: %d casas para a Esquerda\n", P_Rainha);
+    printf("Cavalo: %d movimentos (cada um = Baixo + Baixo + Esquerda)\n", P_Cavalo);
     printf("=================================\n");
 
     return 0;
+
 }
